@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{ENV:HTTPS} !^.*on
+RewriteRule ^(.*)$ https://www.erikstoklasa.cz/$1 [R,L]
+ErrorDocument 404 /404.html
+ErrorDocument 403 /403.html
