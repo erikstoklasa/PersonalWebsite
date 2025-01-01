@@ -1,68 +1,193 @@
 :root {
+  /* Base font size and brand colors */
   font-size: 16px;
-  font-family: monospace !important;
-}
-
-a {
-  color: #000;
-}
-
-a:hover {
-  color: #008080;
+  --primary-color: #008080;
+  --secondary-color: #333;
+  --background-color: #f9f9f9;
+  --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 body {
-  display: flex;
-  max-width: 640px;
-  margin: 5rem auto 5rem;
-  flex-direction: column;
-  padding: 0 1rem;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  color: var(--secondary-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-body p {
-  font-size: 1.6rem;
-  line-height: 2.6rem;
+/* Headings */
+h1, h2, h3 {
+  margin: 0.75rem 0;
+  line-height: 1.25;
 }
 
-.header {
-  text-align: center;
-  display: flex;
-  width: 100%;
-  height: 3rem;
-  background: #000;
-}
-
-.header a {
-  text-decoration: none;
+h1 {
   font-size: 2rem;
-  color: #fff;
-  place-self: center;
-  width: 100%;
+  margin-bottom: 0.25rem;
+  color: var(--secondary-color);
 }
 
+h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-top: 2rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+/* Underline styling for name */
 u {
-  text-decoration-color: #008080;
-  text-decoration-thickness: 4px;
-}
-.alert{
-  background: #008080;
-  border-radius: 10px;
-  padding: 1rem;
-  margin: 2rem 0;
-  color: #fff;
-}
-.current{
-  display: flex;
-  flex-direction: column;
-  margin: 10rem auto 0;
-  text-align: start;
+  text-decoration-color: var(--primary-color);
+  text-decoration-thickness: 3px;
 }
 
-.current p{
-  line-height: 2rem;
-  font-size: x-large;
+/* Intro Section */
+.intro {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.current a{
-  width: max-content;
+.intro .tagline {
+  max-width: 600px;
+  margin: 0.75rem auto 0;
+  font-size: 1.125rem;
+  color: #555;
+}
+
+/* Contact Section */
+.contact-links {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-links ul {
+  list-style: none;
+  padding: 0;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1rem 0 0;
+}
+
+.contact-links li {
+  margin: 0;
+}
+
+.contact-links a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-size: 1.125rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.contact-links a:hover {
+  color: var(--primary-color);
+}
+
+.contact-links i {
+  margin-right: 0.5rem;
+}
+
+/* Experience Section */
+.experience {
+  margin-bottom: 3rem;
+}
+
+.experience .job {
+  margin-bottom: 1.5rem;
+}
+
+.experience h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.experience h3 span {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Projects Section */
+.projects {
+  margin-bottom: 3rem;
+}
+
+.project {
+  margin-bottom: 1.5rem;
+}
+
+.project h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  color: var(--secondary-color);
+}
+
+.project p {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: #444;
+}
+
+.project a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.project a:hover {
+  text-decoration: underline;
+}
+
+/* Achievements Section */
+.achievements {
+  margin-bottom: 3rem;
+}
+
+.achievements ul {
+  list-style: inside disc;
+  padding-left: 1rem;
+}
+
+.achievements li {
+  margin-bottom: 0.5rem;
+}
+
+/* Education Section */
+.education {
+  margin-bottom: 3rem;
+}
+
+.edu-item {
+  margin-bottom: 1rem;
+}
+
+.edu-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.edu-item p {
+  font-size: 1rem;
+  margin: 0.25rem 0 0.5rem;
+  color: #444;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 4rem;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
 }
