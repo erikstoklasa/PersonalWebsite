@@ -3,97 +3,212 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Erik Stoklasa – AI Developer & Bioinformatics Student</title>
+  <title>Erik Stoklasa – AI in Healthcare Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="CS & Biology Student @ CTU | AI in Healthcare Research" />
+  <meta name="description"
+    content="AI in Healthcare engineer. BSc in Medical Electronics & Bioinformatics, CTU Prague. Detecting neurodegenerative disease from voice with speech foundation models." />
   <meta name="author" content="Erik Stoklasa" />
 
   <!-- Social Media Metadata -->
-  <meta property="og:title" content="Erik Stoklasa – AI Developer & Bioinformatics Student">
+  <meta property="og:title" content="Erik Stoklasa – AI in Healthcare Engineer">
   <meta property="og:type" content="website">
-  <meta property="og:description" content="CS & Biology Student @ CTU | AI in Healthcare Research" />
+  <meta property="og:description"
+    content="AI in Healthcare engineer. BSc in Medical Electronics & Bioinformatics, CTU Prague. Detecting neurodegenerative disease from voice with speech foundation models." />
   <meta property="og:image" content="https://erikstoklasa.cz/social_image.jpg">
   <meta property="og:url" content="https://erikstoklasa.cz/">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
 <body>
-  <!-- Introduction Section -->
+  <!-- Introduction -->
   <header class="intro">
-    <h1>Hello, I'm <u>Erik Stoklasa</u></h1>
-    <h2>CS & Biology Student @ CTU | AI in Healthcare Research</h2>
+    <p class="kicker">Prague, Czech Republic</p>
+    <h1>Erik Stoklasa</h1>
+    <p class="role">AI in Healthcare Engineering · BSc Medical Electronics &amp; Bioinformatics, CTU Prague</p>
     <p class="tagline">
-      Developing software for <strong>brain glioma analysis</strong> from MRI scans.
-      Previously worked on <strong>LLM evaluation</strong> and <strong>debiasing techniques</strong> at H2O.ai.
+      I build machine learning systems for medicine — researching
+      <strong>voice-based screening for neurodegenerative disease</strong>, integrating
+      <strong>real-time brain glioma analysis</strong> into a hospital's MRI workflow
+      at CIIRC CTU, and previously building <strong>LLM evaluation &amp; debiasing tooling</strong>
+      at H2O.ai.
     </p>
+    <nav class="contact-links" aria-label="Contact">
+      <a href="mailto:hello@erikstoklasa.cz">Email</a>
+      <a href="https://www.linkedin.com/in/erik-stoklasa/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/erikstoklasa" target="_blank" rel="noopener">GitHub</a>
+    </nav>
   </header>
 
-  <!-- Contact & Social Section -->
-  <section class="contact-links">
-    <h3>Get In Touch</h3>
-    <ul>
-      <li>
-        <a href="mailto:hello@erikstoklasa.cz"><i class="fas fa-envelope"></i> Email</a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/erik-stoklasa/" target="_blank" rel="noopener">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/erikstoklasa" target="_blank" rel="noopener">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-      </li>
-    </ul>
+  <!-- Research / Thesis -->
+  <section class="research" id="research">
+    <p class="section-label">Research</p>
+    <h2>NeuroVoice — can a machine hear Parkinson's disease?</h2>
+    <div class="pub-meta">
+      <p>Bachelor's thesis · 2026</p>
+      <p>Faculty of Electrical Engineering, CTU Prague</p>
+      <p><strong>Erik Stoklasa</strong> · supervised by Ing. Michal Šimek</p>
+    </div>
+
+    <p>
+      Neurodegenerative diseases leave an audible fingerprint in speech — and the right
+      representations can pick it up. I benchmarked ten self-supervised speech foundation models
+      (WavLM, HuBERT, wav2vec&nbsp;2.0, TRILLsson) against traditional acoustic features for
+      classifying dysarthria across early- and advanced-stage Parkinson's disease, Huntington's
+      disease, and multiple system atrophy. The best model distinguishes patients from healthy
+      controls from a single spontaneous monologue — only a microphone required, no clinical
+      equipment.
+    </p>
+    <p>
+      Model selection ran on patient-stratified nested cross-validation scores — guarding
+      against data leakage — and the final evaluation on a held-out test set, where the best
+      configuration, TRILLsson embeddings with logistic regression, reached a Macro F1 of 0.88
+      on the spontaneous monologue task.
+    </p>
+    <p>
+      Interesting part was interpreting the embedding dimensions themselves: SHAP,
+      linear probes, and correlation analysis surfaced individual TRILLsson dimensions weakly
+      but significantly tied to known acoustic markers — formant-based measures of vowel
+      articulation above all, with others tracking the long-term average spectrum and pause
+      duration. The models seem to rely on distributed acoustic information that partly overlaps
+      with what clinicians already listen for. Voice-based screening won't replace a
+      neurologist — but it could flag who should see one sooner.
+    </p>
+
+    <div class="stats" role="list">
+      <div class="stat" role="listitem">
+        <span class="stat-number">0.88</span>
+        <span class="stat-label">Macro F1, held-out test set</span>
+      </div>
+      <div class="stat" role="listitem">
+        <span class="stat-number">10</span>
+        <span class="stat-label">speech foundation models</span>
+      </div>
+      <div class="stat" role="listitem">
+        <span class="stat-number">5,601</span>
+        <span class="stat-label">voice recordings</span>
+      </div>
+      <div class="stat" role="listitem">
+        <span class="stat-number">651</span>
+        <span class="stat-label">participants</span>
+      </div>
+    </div>
+
+    <div class="figures">
+      <figure class="figure-wide">
+        <img src="img/results-cv.png" loading="lazy"
+          alt="Bar charts of cross-validation AUC scores for HuBERT, Wav2Vec2, WavLM, and TRILL model families across four speech tasks: prolonged phonation, diadochokinesis, standardized reading, and monologue.">
+        <figcaption>Cross-validation AUC across the four embedding model families and speech
+          tasks — the spontaneous monologue task is consistently among the strongest. Click any
+          figure to enlarge.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/shap-trillsson.png" loading="lazy"
+          alt="SHAP value violin plot of the ten most important TRILLsson embedding dimensions for early-stage Parkinson's classification.">
+        <figcaption>SHAP analysis of the embedding dimensions driving early-stage Parkinson's
+          predictions in the best model.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/umap-trillsson.png" loading="lazy"
+          alt="UMAP projection of TRILLsson speech embeddings, colored by disease group. Huntington's disease and multiple system atrophy form separated clusters.">
+        <figcaption>UMAP projection of TRILLsson embeddings — HD and MSA separate into distinct
+          clusters, while early-stage Parkinson's overlaps with healthy controls.</figcaption>
+      </figure>
+    </div>
+
+    <p class="cta-links">
+      <a class="button" href="https://github.com/erikstoklasa/neurovoice" target="_blank" rel="noopener">Code on
+        GitHub</a>
+      <a class="button button-secondary"
+        href="https://github.com/erikstoklasa/neurovoice/releases/download/v0.1.0/Bachelor_Thesis_Erik_Stoklasa.pdf"
+        target="_blank" rel="noopener">Read the thesis (PDF)</a>
+    </p>
+
+    <div class="research-secondary">
+      <h3>Hospital-integrated deep learning for real-time glioma analysis with advanced diffusion MRI</h3>
+      <div class="pub-meta">
+        <p>European Congress of Radiology 2026 · Vienna</p>
+        <p>M. Nemy, <strong>E. Stoklasa</strong>, D. Bojko, V. Sedlák, A. Kavková, L. Polásková,
+          I. Jacecková, M. Majovsky</p>
+      </div>
+      <p>
+        Deep learning that runs where it matters — inside the hospital. Selected for presentation
+        at ECR 2026: a real-time system for multi-shell diffusion MRI analysis of gliomas, with a
+        secure PACS-connected workflow and embedded models for molecular prediction and automatic
+        segmentation.
+      </p>
+      <a href="https://connect.myesr.org/course/hot-topic-ai-assisted-neuroimaging-and-image-analysis/" target="_blank"
+        rel="noopener">ECR 2026 session</a>
+    </div>
   </section>
 
-  <!-- Projects Section -->
-  <section class="projects">
-    <h2>Selected Projects</h2>
-    <div class="project">
-      <h3>Studento.cz</h3>
-      <p>
-        A modern school management system built with ASP.NET Core, featuring modular services for grade tracking,
-        timetables, and student data management. I led the development team, implemented key API models, and optimized
-        CI/CD pipelines using Azure DevOps. Website is not currently public.
-      </p>
+  <!-- Experience -->
+  <section class="experience">
+    <p class="section-label">Experience</p>
+    <div class="job">
+      <h3>Czech Institute of Informatics, Robotics and Cybernetics</h3>
+      <p class="meta-line">Software Engineer, Medical Data · 2025–present · Prague</p>
+      <p>Building the software that puts deep learning within clinicians' reach: the
+        hospital-integrated, PACS-connected workflow of a real-time glioma analysis system for
+        multi-shell diffusion MRI, plus a custom vein analysis toolkit — developed in
+        collaboration with the Czech Military Hospital in Prague.</p>
+    </div>
+    <div class="job">
+      <h3>H2O.ai</h3>
+      <p class="meta-line">Software Engineer Intern · 2022–2025 · Prague</p>
+      <p>Helped make LLMs measurable: implemented generative-AI evaluators and fairness/debiasing
+        methods in h2o-sonar, an open-source Python toolkit that ships in production inside
+        H2O Eval Studio and H2O Driverless AI.</p>
+    </div>
+    <div class="job">
+      <h3>Studento</h3>
+      <p class="meta-line">Founder &amp; Developer · 2020–2022 · Prague</p>
+      <p>Took a school management system from idea to deployment, leading a team of five
+        developers — selected for Start it @ČSOB, the accelerator of ČSOB bank (part of the
+        KBC Group).</p>
       <a href="https://github.com/erikstoklasa/StudentoProject" target="_blank" rel="noopener">View on GitHub</a>
     </div>
+    <div class="job">
+      <h3>Czech Technical University in Prague</h3>
+      <p class="meta-line">BSc Medical Electronics &amp; Bioinformatics · 2022–2026</p>
+      <p>Faculty of Electrical Engineering — where signal processing and machine learning meet
+        the clinic. Erasmus exchange at TalTech, Tallinn (2024).</p>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects">
+    <p class="section-label">Software</p>
 
     <div class="project">
       <h3>SchoolAccountSync</h3>
+      <p class="meta-line">.NET 6 · Razor Pages · Docker · PostgreSQL · MSSQL</p>
       <p>
-        A .NET 6 project for synchronizing school systems like Bakaláři, copiers,
-        library, and entrance management.
-        <br><strong>Tech:</strong> Razor Pages, Docker, PostgreSQL, MSSQL
+        The quiet glue that keeps a school's systems in agreement — Bakaláři, copiers, library,
+        and entrance management, synchronized.
       </p>
       <a href="https://github.com/erikstoklasa/SchoolAccountSync" target="_blank" rel="noopener">View on GitHub</a>
     </div>
+  </section>
+
+  <section class="projects projects-hobby">
+    <p class="section-label">Hobby Projects</p>
 
     <div class="project">
       <h3>MugHeater</h3>
+      <p class="meta-line">Embedded · STM32-F303K8</p>
       <p>
-        A USB-powered mug heater using the STM32-F303K8 microcontroller with adjustable
-        temperature control, LED feedback, and buzzer alerts.
+        Cold coffee is a hardware problem. A USB-powered mug heater built on the STM32-F303K8 —
+        adjustable temperature control, LED feedback, and buzzer alerts.
       </p>
       <a href="https://github.com/erikstoklasa/MugHeater" target="_blank" rel="noopener">View on GitHub</a>
     </div>
-
-    <div class="project">
-      <h3>PythonAlgorithms</h3>
-      <p>
-        A collection of Python algorithms developed at CTU Prague, including
-        tasks for date conversion, pathfinding, and sequence operations.
-      </p>
-      <a href="https://github.com/erikstoklasa/PythonAlgorithms" target="_blank" rel="noopener">View on GitHub</a>
-    </div>
-
   </section>
 
   <!-- Footer -->
@@ -101,18 +216,35 @@
     <p>© <span id="year"></span> Erik Stoklasa. All Rights Reserved.</p>
   </footer>
 
-  <!-- Google Analytics (optional) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90831300-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'UA-90831300-1');
-  </script>
+  <!-- Figure lightbox -->
+  <dialog class="lightbox" id="lightbox">
+    <img src="" alt="">
+  </dialog>
 
   <!-- Auto-update year in footer -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    document.querySelectorAll('.figures img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.showModal();
+      });
+    });
+    lightbox.addEventListener('click', () => lightbox.close());
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GW6GLKD7X3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-GW6GLKD7X3');
   </script>
 </body>
 
